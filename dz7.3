@@ -1,0 +1,17 @@
+def update_alarm_clocks(name, time, type):
+    clocks = alarm_clocks.get(name, [])
+    if type == "add":
+        clocks.append(time)
+    elif type == "delete":
+        clocks.remove(time)
+    else:
+        print("I do not know of such an action, try again")
+    alarm_clocks[name] = clocks
+    print("All alarms")
+    for clock in clocks:
+        print(clock)
+while True:
+    name = input("Enter name")
+    time = input("Enter time")
+    type = input("Enter action delete or add")
+    update_alarm_clocks(name, time, type)
